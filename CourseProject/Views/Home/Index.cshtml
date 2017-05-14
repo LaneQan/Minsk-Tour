@@ -1,31 +1,87 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex,nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/firstpage.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/loading.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/julia.css" />
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,500,600' rel='stylesheet' type='text/css'>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+</head>
+<body class="demo-2">
+    <div id="ip-container" class="ip-container">
+        <header class="ip-header">
+            <h1 class="ip-logo">
+                <img src="~/images/logo.png" width="450" height="370" alt="Логотип" style="margin:0 auto;display:block;">
+            </h1>
+            <div class="ip-loader">
+                <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+                    <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
+                    <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
+                </svg>
+            </div>
+        </header>
+        <div class="ip-main">
+            <div class="grid">
+                <figure class="effect-julia">
+                    <img src="~/images/1.jpg" />
+                    <figcaption>
+                        <h2><span>Базовый</span> тур</h2>
+                        <div>
+                            <p>Количество объектов для посещения - 4</p>
+                            <p>Время - 2 часа</p>
+                            <p>Цена - от 10р.</p>
+                            <p>Количество человек - 30</p>
+                        </div>
+                        <a href="#">View more</a>
+                    </figcaption>
+                </figure>
+                <figure class="effect-julia">
+                    <img src="~/images/2.jpg" />
+                    <figcaption>
+                        <h2><span>Расширенный</span> тур</h2>
+                        <div>
+                            <p>Количество объектов для посещения - 6</p>
+                            <p>Время - 3 часа</p>
+                            <p>Цена - от 20р.</p>
+                            <p>Количество человек - 30</p>
+                        </div>
+                        <a href="#">View more</a>
+                    </figcaption>
+                </figure>
+                <figure class="effect-julia">
+                    <img src="~/images/3.jpg" />
+                    <figcaption>
+                        <h2><span>Полный</span> тур</h2>
+                        <div>
+                            <p>Количество объектов для посещения - 8</p>
+                            <p>Время - 4 часа</p>
+                            <p>Цена - от 30р.</p>
+                            <p>Количество человек - 30</p>
+                        </div>
+                        <a href="#">View more</a>
+                    </figcaption>
+                </figure>
+                <figure class="effect-julia">
+                    <img src="~/images/4.jpg" />
+                    <figcaption>
+                        <h2><span>Индивидуальный</span> тур</h2>
+                        <div>
+                            <p>Тур формируется для групп по желанию</p>
+                        </div>
+                        <a href="#">View more</a>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <script src="~/Scripts/classie.js"></script>
+    <script src="~/Scripts/pathLoader.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</body>
+</html>

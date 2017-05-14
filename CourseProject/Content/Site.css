@@ -9,9 +9,14 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+#footer {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #1c9ccd;
+}
+
 .dl-horizontal dt {
     white-space: normal;
 }
