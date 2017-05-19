@@ -1,0 +1,86 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/default.css">
+    <link rel="stylesheet" href="~/Content/ideal-image-slider.css">
+    <style media="screen">
+        #slider {
+            max-width: 800px;
+            margin: -10px auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="~/images/logo.png" id="logo" alt="Логотип">
+    <hr style="margin-top: -60px"/>
+    <div id="slider">
+        <img src="~/images/1.jpg"  alt="Slide 1" />
+        <img src="~/images/2.jpg"  alt="Slide 2" />
+        <img src="~/images/3.jpg"  alt="Slide 3" />
+        <img src="~/images/4.jpg"  alt="Slide 4" />
+    </div>
+    <hr />
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>ИНФОРМАЦИЯ О ТУРЕ</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 skill_items offset-lg-0 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
+                    <div>
+                        <div class="box_img">
+                            <img src="~/images/clock.jpg" height=110 weight=110  alt="Время">
+                        </div>
+                        <h2>ВРЕМЯ</h2>
+                        <hr id="info"/>
+                    </div>
+                    <div class="text">
+                        Данный тур расчитан на  <strong> @ViewBag.TourHours  </strong><br />
+                        Время отъезда - <strong>@ViewBag.LeavingTime </strong> <br />
+                        Туры проводятся по <strong>@ViewBag.TourDay</strong>
+                    </div>
+                </div>
+                <div class="col-lg-4 skill_items offset-lg-0 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
+                    <div>
+                        <div class="box_img">
+                            <img src="~/images/compass.jpg" height=110 weight=110 alt="Место">
+                        </div>
+                        <h2>МЕСТО</h2>
+                        <hr id="info" />
+                    </div >
+                    <div class="text">
+                        @ViewBag.Places
+                    </div>
+                </div>
+                <div class="col-lg-4 skill_items offset-lg-0 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
+                    <div>
+                        <div class="box_img">
+                            <img src="~/images/money.jpg" height=110 weight=110 alt="Цена">
+                        </div>
+                        <h2>ЦЕНА</h2>
+                        <hr id="info" />
+                    </div>
+                    <div class="text">
+                        До 18 лет - <strong>@ViewBag.PriceBefore18</strong> рублей. <br />
+                        После 18 лет - <strong>@ViewBag.PriceAfter18</strong> рублей.
+                </div>
+            </div>
+        </div>
+            </div>
+    <script src="~/Scripts/ideal-image-slider.js"></script>
+    <script>
+	var slider = new IdealImageSlider.Slider('#slider');
+	slider.start();
+    </script>
+</body>
+</html>
+
+
+

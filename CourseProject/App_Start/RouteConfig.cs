@@ -14,6 +14,19 @@ namespace CourseProject
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+            "OnlyAction",
+            "{action}",
+            new { controller = "Home", action = "Index" }
+            );
+
+            routes.MapRoute(
+            name: "Tour",
+             url: "Tour/{id}",
+             defaults: new { controller = "Home", action = "Tour" },
+             constraints: new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
             "Default", 
             "{controller}/{action}/{id}", // URL with parameters
             new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
