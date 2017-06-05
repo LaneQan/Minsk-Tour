@@ -7,8 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="~/Content/default.css">
-    <link rel="stylesheet" href="~/Content/ideal-image-slider.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/default.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/ideal-image-slider.css">
     <style media="screen">
         #slider {
             max-width: 800px;
@@ -20,10 +21,15 @@
     <img src="~/images/logo.png" id="logo" alt="Логотип">
     <hr style="margin-top: -60px"/>
     <div id="slider">
-        <img src="~/images/1.jpg"  alt="Slide 1" />
-        <img src="~/images/2.jpg"  alt="Slide 2" />
-        <img src="~/images/3.jpg"  alt="Slide 3" />
-        <img src="~/images/4.jpg"  alt="Slide 4" />
+        @{
+            string img = ViewBag.Slider;
+            List<int> images = img.Split(',').Select(Int32.Parse).ToList();
+            foreach (var k in images)
+            {
+                string imgSrc = "/images/" + k + ".jpg";
+                <img src=@imgSrc />
+            }
+        }
     </div>
     <hr />
         <div class="container">
@@ -56,7 +62,14 @@
                         <hr id="info" />
                     </div >
                     <div class="text">
-                        @ViewBag.Places
+                        @{ 
+                            string str = ViewBag.Places;
+                            List<string> places = str.Split('\n').ToList();
+                            foreach (var k in places)
+                            {
+                                <text>@k</text> <br />
+                            }
+                        }
                     </div>
                 </div>
                 <div class="col-lg-4 skill_items offset-lg-0 offset-md-3 col-md-6 offset-sm-2 col-sm-8">
@@ -69,7 +82,11 @@
                     </div>
                     <div class="text">
                         До 18 лет - <strong>@ViewBag.PriceBefore18</strong> рублей. <br />
-                        После 18 лет - <strong>@ViewBag.PriceAfter18</strong> рублей.
+                        После 18 лет - <strong>@ViewBag.PriceAfter18</strong> рублей. <br />
+                        @{
+                                string url = "/Reservation/" + ViewBag.TourId;
+                        <a href=@url type="button" class="btn btn-success btn-lg";">Забронировать</a>
+                        }
                 </div>
             </div>
         </div>

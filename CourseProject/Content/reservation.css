@@ -1,0 +1,19 @@
+#form {
+    margin: 0 auto;
+    width: 300px;
+}
+
+body{
+	font-family: Times New Roman ; 
+	font-size: 20px;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+.required:after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}

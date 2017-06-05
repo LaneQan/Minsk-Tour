@@ -12,6 +12,11 @@
 	position: relative;
 	overflow: hidden;
 }
+.btn {
+    text-align:center;
+    margin-left: 31%;
+    margin-top: 70px;
+}
 .iis-slide {
 	display: block;
 	bottom: 0;

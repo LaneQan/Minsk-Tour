@@ -1,0 +1,53 @@
+﻿
+@model CourseProject.Models.User
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/reservation.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/default.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/normalize.css" />
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <title>Бронирование тура</title>
+</head>
+<body>
+    <img src="~/images/logo.png" id="logo" alt="Логотип">
+    <hr style="margin-top: -60px" />
+    @using (Html.BeginForm("Reservation", "Home", FormMethod.Post))
+    {
+        <div id="form">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, "Ваше имя", new { @class = "control-label required" })
+            @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Surname, "Ваша фамилия", new { @class = "control-label required" })
+            @Html.EditorFor(m => m.Surname, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Surname)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Mail, "Ваше e-mail", new { @class = "control-label required" })
+            @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Mail)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Phone, "Ваше телефон", new { @class = "control-label required" })
+            @Html.EditorFor(m => m.Phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Phone)
+        </div>
+            <div class="form-group">
+                @Html.HiddenFor(m => m.TourId, new { @Value = ViewBag.TourId })
+        </div>
+                <button type="submit" class="btn btn-success btn-lg">Забронировать</button>
+            </div>
+    }
+</body>
+</html>

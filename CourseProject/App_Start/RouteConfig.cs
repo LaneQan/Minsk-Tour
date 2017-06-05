@@ -20,6 +20,13 @@ namespace CourseProject
             );
 
             routes.MapRoute(
+            name: "Reservation",
+             url: "Reservation/{id}",
+             defaults: new { controller = "Home", action = "Reservation" },
+             constraints: new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
             name: "Tour",
              url: "Tour/{id}",
              defaults: new { controller = "Home", action = "Tour" },

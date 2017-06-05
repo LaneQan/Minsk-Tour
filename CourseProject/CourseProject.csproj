@@ -148,7 +148,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Tour.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +161,7 @@
     <Content Include="Content\julia.css" />
     <Content Include="Content\loading.css" />
     <Content Include="Content\normalize.css" />
+    <Content Include="Content\reservation.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -196,7 +197,7 @@
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Shared\_TourLayout.cshtml" />
     <Content Include="Views\Home\Tour.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Reservation.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -230,9 +231,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52539</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52539/</IISUrl>
+          <IISUrl>http://localhost:49759/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
