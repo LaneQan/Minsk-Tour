@@ -17,7 +17,7 @@ namespace CourseProject.Controllers
         }
         public ActionResult Tour(int id)
         {
-            if (id>0 && id<5)
+            if (Enumerable.Range(0, 5).Contains(id))
             {
                 List<string> info = getInfo(id);
                 ViewBag.TourId = info[0];

@@ -13,11 +13,47 @@ namespace CourseProject.Controllers
         // GET: Admin
         public ActionResult ToursList()
         {
-            ViewBag.ReservedTourInfoList = getReservedInfo();
-            return View();
+            if (Session["AdminLogin"] != null)
+            {
+                ViewBag.ReservedTourInfoList = GetReservedInfo();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            if (Session["AdminLogin"] == null)
+                return View();
+            else return RedirectToAction("ToursList");
         }
 
-        public List<ReservedTourInfo> getReservedInfo()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(AdminLogin objAdmin)
+        {
+            if (ModelState.IsValid)
+            {
+                    if (objAdmin.Login=="admin" && objAdmin.Password=="admin")
+                    {
+                        Session["AdminLogin"] = objAdmin.Login;
+                        return RedirectToAction("ToursList");
+                    }
+            }
+
+            return View(objAdmin);
+        }
+
+        public ActionResult Exit()
+        {
+            Session["AdminLogin"] = null;
+            return RedirectToAction("Login");
+        }
+
+        public List<ReservedTourInfo> GetReservedInfo()
         {
             string connectionString = "Data Source=" + Server.MapPath("~") + @"\App_Data\Tours.db";
             List<ReservedTourInfo> userInfo = new List<ReservedTourInfo>();

@@ -5,14 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="~/Content/reservation.css">
     <link rel="stylesheet" type="text/css" href="~/Content/default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/reservation.css">
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
     <title>Бронирование тура</title>
@@ -34,7 +33,7 @@
             @Html.ValidationMessageFor(m => m.Surname)
         </div>
         <div class="form-group">
-            @Html.LabelFor(m => m.Mail, "Ваше e-mail", new { @class = "control-label required" })
+            @Html.LabelFor(m => m.Mail, "Ваш e-mail", new { @class = "control-label required" })
             @Html.EditorFor(m => m.Mail, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(m => m.Mail)
         </div>

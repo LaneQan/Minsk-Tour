@@ -10,11 +10,9 @@ namespace CourseProject.Models
     public class User
     {
         [Required(ErrorMessage = "Не введено имя")]
-        [RegularExpression(@"[А-Яа-я]", ErrorMessage = "Имя может содержать символы А-я")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Не введена фамилия")]
-        [RegularExpression(@"[А-Яа-я]", ErrorMessage = "Фамилия может содержать символы А-я")]
         public string Surname { get; set; }
 
         [Required(ErrorMessage = "Не введен телефон")]
