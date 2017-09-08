@@ -16,7 +16,7 @@ namespace CourseProject
             routes.MapRoute(
             "OnlyAction",
             "{action}",
-            new { controller = "Home", action = "Index" }
+            new { controller = "Home", action = "Main" }
             );
 
             routes.MapRoute(
@@ -35,8 +35,8 @@ namespace CourseProject
 
             routes.MapRoute(
             "Default", 
-            "{controller}/{action}/{id}", // URL with parameters
-            new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+            "{controller}/{action}/{id}",
+            new { controller = "Home", action = "Main", id = UrlParameter.Optional }
         );
 
         }

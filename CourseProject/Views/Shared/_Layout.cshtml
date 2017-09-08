@@ -10,9 +10,18 @@
 </head>
 <body>
         @RenderBody()
-    <!----<div id="footer">
-        &copy; @DateTime.Now.Year - Пармон Евгений
-    </div>--->
+
+    @if (IsSectionDefined("hidefooter"))
+    {
+        @RenderSection("hidefooter", false)
+    }
+    else  
+    {
+        <footer>
+            <hr />
+            <a>О нас</a> <a>Контакты</a>
+        </footer>
+    }
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -28,7 +28,6 @@ namespace CourseProject.Controllers
                 ViewBag.PriceBefore18 = info[5];
                 ViewBag.PriceAfter18 = info[6];
                 ViewBag.Slider = info[7];
-
                 return View();
             }
             else throw new HttpException(404, "");
@@ -37,8 +36,8 @@ namespace CourseProject.Controllers
         [HttpGet]
         public ActionResult Reservation(int id)
         {
-            ViewBag.TourId = id;
-            return View();
+                ViewBag.TourId = id;
+                return View();
         }
         [HttpPost]
         public ActionResult Reservation(User user)

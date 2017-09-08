@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/ToursList.css">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Телефон</th>
+                    <th>Эл. адрес</th>
+                    <th>Номер тура</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var k in ViewBag.ReservedTourInfoList)
+                    {
+                        <tr>
+                            <td>@k.Name</td>
+                            <td>@k.Surname</td>
+                            <td>@k.Phone</td>
+                            <td>@k.Mail</td>
+                            <td>@k.Id</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+
