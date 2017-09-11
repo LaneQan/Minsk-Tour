@@ -1,0 +1,30 @@
+﻿@section hidefooter {}
+
+  
+<div id="results">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Телефон</th>
+            <th>Эл. адрес</th>
+            <th>Номер тура</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            foreach (var k in ViewBag.ReservedTourInfoList)
+            {
+                <tr>
+                    <td>@k.Name</td>
+                    <td>@k.Surname</td>
+                    <td>@k.Phone</td>
+                    <td>@k.Mail</td>
+                    <td>@k.Id</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

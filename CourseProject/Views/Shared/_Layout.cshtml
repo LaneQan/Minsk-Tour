@@ -7,6 +7,9 @@
     <title>@ViewBag.Title Туры по Минску</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/scripts/validate.min.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
 </head>
 <body>
         @RenderBody()
@@ -25,6 +28,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+@RenderSection("scripts", required: false)
 </body>
 </html>

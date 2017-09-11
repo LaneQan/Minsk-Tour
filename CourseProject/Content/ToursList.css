@@ -1,3 +1,14 @@
 ﻿body {
     background-color: white;
 }
+
+.btn-primary {
+    text-align: center;
+    margin: 5px 115px;
+}
+.btn-danger {
+    margin-top: -50px;
+}
+.info {
+    padding-top: 30px;
+}

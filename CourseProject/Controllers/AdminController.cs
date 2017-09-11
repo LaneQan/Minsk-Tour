@@ -15,13 +15,22 @@ namespace CourseProject.Controllers
         {
             if (Session["AdminLogin"] != null)
             {
-                ViewBag.ReservedTourInfoList = GetReservedInfo();
                 return View();
             }
             else
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        public ActionResult ReservedList()
+        {
+            ViewBag.ReservedTourInfoList = GetReservedInfo();
+            return PartialView();
+        }
+        public ActionResult TestView()
+        {
+            return PartialView();
         }
         [HttpGet]
         public ActionResult Login()
